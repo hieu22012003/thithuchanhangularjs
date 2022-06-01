@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-<body ng-app="myApp">
-    <h1>đồ uống rạp </h1>
+<body ng-app="myApp" background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-J2ByEH6atH9h3tHv9TKIP739-gNi7Wa3YA&usqp=CAU">
+    <h1 aglin="center">đồ uống rạp </h1>
     <div ng-controller="MathController" >
         <form action="">
             <table border="1">
@@ -45,6 +45,12 @@
                 <tr>
                     <td>
                         <p> tổng hóa đơn là: {{totalSalary().toFixed(2) | currency : '' : 0}} VND</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="mua hàng">
+                        <input type="reset" value="không mua nữa">
                     </td>
                 </tr>
             </table>
