@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 <body ng-app="myApp">
     <h1>đồ uống rạp </h1>
-    <div ng-controller="MathController">
-        <p>mã:</p><select ng-options="dependant for dependant in dependants" ng-model="selectedD" ng-init = "true"></select>
+    <div ng-controller="MathController" >
+        <p>loại đồ uống:</p><select ng-options="dependant for dependant in dependants" ng-model="selectedD" ng-init = "true"></select>
         <p>Size: </p>
         <select ng-options="gender for gender in genders" ng-model="selectedG" ng-init="selectedG = true"></select>
         <p>giá: {{price}} VND</p>
