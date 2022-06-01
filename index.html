@@ -9,13 +9,46 @@
 <body ng-app="myApp">
     <h1>đồ uống rạp </h1>
     <div ng-controller="MathController" >
-        <p>loại đồ uống:</p><select ng-options="dependant for dependant in dependants" ng-model="selectedD" ng-init = "true"></select>
-        <p>Size: </p>
+        <form action="">
+            <table border="1">
+                <tr>
+                    <td>
+                        <p>loại đồ uống:</p><select ng-options="dependant for dependant in dependants" ng-model="selectedD" ng-init = "true"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Size: </p>
         <select ng-options="gender for gender in genders" ng-model="selectedG" ng-init="selectedG = true"></select>
-        <p>giá: {{price}} VND</p>
-        <p>số lượng: <input type="text" ng-model="quantity"/> </p>
-        <p> giá : {{empInsurance()}} VND</p>
-        <p> tiền ship : {{incomeTax()}} VND</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>giá: {{price}} VND</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>số lượng: <input type="text" ng-model="quantity"/> </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> giá :{{empInsurance()}} VND</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> tiền ship : {{incomeTax()}} VND</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> tổng hóa đơn là: {{totalSalary().toFixed(2) | currency : '' : 0}} VND</p>
+                    </td>
+                </tr>
+            </table>
+        </form>
         <div ng-switch on="selectedD">
             <div ng-switch-when="Pepsi"></div>
             <div ng-switch-when="Coca Cola"></div>
@@ -27,7 +60,7 @@
             <div ng-switch-when="S"></div>
         </div>
 
-        <p> tổng hóa đơn là: {{totalSalary().toFixed(2) | currency : '' : 0}} VND</p>
+        
     </div>
     <script>
         var app = angular.module('myApp', []);
